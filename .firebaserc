@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "omicron-34a8e": {
+      "hosting": {
+        "omicron": [
+          "omicron-34a8e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "omicron-34a8e"
+  }
+}

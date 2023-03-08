@@ -1,0 +1,46 @@
+<p>user are works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-center text-grayish">Please fill the form details</h3>
+            <form [formGroup]="userForm"  #RegisterForm="ngForm" (ngSubmit)="userForm(RegisterForm.value)">
+                Name:-
+                <input type="text"  ngModel id="Name" formControlName="Name"  name="Name"  class="form-control" placeholder="Name"><br>
+
+                Age:-
+                <input type="text" ngModel id="Age" formControlName="Age" name="Age" class="form-control" placeholder="Age"><br>
+                Score:-
+                <input type="text" ngModel id="Score" formControlName="Score" name="Score" class="form-control" placeholder="Score"><br>
+
+                <button type="submit" class="btn btn-dark my-2" (click)="submit(userForm.value)" id="saveData"  name="submit" value="Register">Submit</button>
+
+            </form>
+        </div>
+        <div class="col">
+            <h3>Data can be seen like below</h3>
+            <input type="text" [(ngModel)]="search" name="search" id="search" placeholder="search">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Score</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let cloth of user1">
+                        <th scope="row">{{cloth.Name}}</th>
+                        <th scope="row">{{cloth.Age}}</th>
+                        <th scope="row">{{cloth.Score}}</th>
+                        <td>
+                            <button class="btn btn-sm btn-warning mx-2">Edit</button>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
